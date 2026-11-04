@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shrikar Sugarcane Harvester Business Management System</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f8f1;
+    color: #263328;
+    line-height: 1.6;
+}
+
+header {
+    background: #176b35;
+    color: white;
+    padding: 15px 5%;
+    text-align: center;
+}
+
+header h1 { font-size: 25px; }
+
+nav {
+    background: #104d26;
+    padding: 12px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 5px 8px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+nav a:hover { color: #ffdf70; }
+
+.hero {
+    background: linear-gradient(120deg, #174d28, #6ca943);
+    color: white;
+    text-align: center;
+    padding: 65px 20px;
+}
+
+.hero h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    max-width: 750px;
+    margin: 0 auto 20px;
+}
+
+.btn {
+    display: inline-block;
+    background: #176b35;
+    color: white;
+    padding: 11px 18px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.hero .btn {
+    background: #ffdf70;
+    color: #203522;
+}
+
+section {
+    padding: 40px 7%;
+    scroll-margin-top: 15px;
+}
+
+section h2 {
+    text-align: center;
+    color: #176b35;
+    margin-bottom: 25px;
+    font-size: 27px;
+}
+
+.about {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.feature-section, .working { background: #e6f1df; }
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card, .feature-card {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    border: 1px solid #d8e7d3;
+    box-shadow: 0 4px 12px #00000012;
+}
+
+.card h3, .feature-card h3 {
+    color: #247b3e;
+    margin-bottom: 10px;
+}
+
+.card a {
+    display: inline-block;
+    margin-top: 12px;
+    color: #176b35;
+    font-weight: bold;
+}
+
+.feature-card {
+    margin: 20px auto;
+    max-width: 900px;
+}
+
+form {
+    display: grid;
+    gap: 12px;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #aabbaa;
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.records {
+    margin-top: 20px;
+    list-style: none;
+}
+
+.records li {
+    background: #f4f8f1;
+    border: 1px solid #d8e7d3;
+    border-radius: 8px;
+    padding: 12px;
+    margin: 10px 0;
+    overflow-wrap: anywhere;
+}
+
+.delete-btn {
+    background: #b42318;
+    color: white;
+    padding: 7px 12px;
+    border: none;
+    border-radius: 5px;
+    margin: 8px 5px 0 0;
+    cursor: pointer;
+}
+
+.summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.summary-box {
+    padding: 16px;
+    background: #e6f1df;
+    border-radius: 8px;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.summary-box h4 {
+    color: #176b35;
+    margin-bottom: 8px;
+}
+
+.steps {
+    max-width: 850px;
+    margin: auto;
+}
+
+.steps li { margin: 12px 0; }
+
+.contact {
+    max-width: 700px;
+    margin: auto;
+}
+
+.contact-info {
+    background: white;
+    border: 1px solid #d8e7d3;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+    overflow-wrap: anywhere;
+}
+
+.contact-info a {
+    color: #176b35;
+    text-decoration: none;
+}
+
+#message {
+    margin-top: 12px;
+    color: #176b35;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+
+footer {
+    background: #173d24;
+    color: white;
+    text-align: center;
+    padding: 22px 12px;
+}
+
+footer p {
+    margin: 6px 0;
+    overflow-wrap: anywhere;
+}
+
+footer a {
+    color: #ffdf70;
+    text-decoration: none;
+}
+
+@media (max-width: 650px) {
+    header h1 { font-size: 21px; }
+    nav a { font-size: 14px; margin: 5px; }
+    .hero h2 { font-size: 27px; }
+    section { padding: 30px 5%; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🌾 Shrikar Sugarcane Harvester Machine</h1>
+    <p>Business Management System</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#features">Features</a>
+    <a href="#booking">Booking</a>
+    <a href="#finance">Income & Expenses</a>
+    <a href="#working">Working</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<main>
+
+<section class="hero" id="home">
+    <h2>Shrikar Sugarcane Harvester Machine</h2>
+    <p>Modern Technology for Efficient Sugarcane Harvesting.
+    Manage machine bookings, income and expenses in one place.</p>
+    <a href="#features" class="btn">Explore Features</a>
+</section>
+
+<section id="about">
+    <h2>About the Machine</h2>
+    <div class="about">
+        <p>Shrikar Sugarcane Harvester Machine Business Management
+        System is a website designed to organize sugarcane harvesting
+        services. It helps maintain machine booking information and
+        financial records using HTML, CSS, JavaScript and Local Storage.</p>
+    </div>
+</section>
+
+<section id="features" class="feature-section">
+    <h2>Business Management Features</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>1. Home Page</h3>
+            <p>Website introduction and machine information.</p>
+            <a href="#home">Visit Home</a>
+        </div>
+        <div class="card">
+            <h3>2. Machine Booking</h3>
+            <p>Save booking date, village name and farming area.</p>
+            <a href="#booking">Book Machine</a>
+        </div>
+        <div class="card">
+            <h3>3. Income Management</h3>
+            <p>Record income and expenses and calculate profit or loss.</p>
+            <a href="#finance">Manage Finances</a>
+        </div>
+        <div class="card">
+            <h3>4. Contact & Enquiry</h3>
+            <p>View contact details and submit enquiries.</p>
+            <a href="#contact">Contact Us</a>
+        </div>
+    </div>
+</section>
+
+<section id="booking" class="feature-section">
+    <h2>Machine Booking</h2>
+    <div class="feature-card">
+        <h3>Book Harvesting Machine</h3>
+        <form id="bookingForm">
+            <input type="text" id="bookingCustomer"
+                   placeholder="Customer Name" required>
+
+            <input type="tel" id="bookingPhone"
+                   placeholder="10 Digit Mobile Number"
+                   pattern="[0-9]{10}" maxlength="10" required>
+
+            <input type="date" id="bookingDate" required>
+
+            <input type="text" id="bookingVillage"
+                   placeholder="Village Name" required>
+
+            <input type="number" id="bookingArea"
+                   placeholder="Area in Acres"
+                   min="0.1" step="0.1" required>
+
+            <button class="btn" type="submit">Save Booking</button>
+        </form>
+
+        <h3 class="records">Booking Records</h3>
+        <ul class="records" id="bookingList"></ul>
+    </div>
+</section>
+
+<section id="finance">
+    <h2>Income & Expense Management</h2>
+    <div class="feature-card">
+        <h3>Add Financial Record</h3>
+
+        <form id="financeForm">
+            <input type="text" id="financeDescription"
+                   placeholder="Description / Customer Name" required>
+
+            <input type="number" id="income"
+                   placeholder="Machine Rent / Income (₹)"
+                   min="0" step="0.01" required>
+
+            <input type="number" id="diesel"
+                   placeholder="Diesel Expense (₹)"
+                   min="0" step="0.01" required>
+
+            <input type="number" id="maintenance"
+                   placeholder="Maintenance Expense (₹)"
+                   min="0" step="0.01" required>
+
+            <button class="btn" type="submit">
+                Save Financial Record
+            </button>
+        </form>
+
+        <h3 class="records">Financial Summary</h3>
+
+        <div class="summary">
+            <div class="summary-box">
+                <h4>Total Income</h4>
+                <p>₹<span id="totalIncome">0.00</span></p>
+            </div>
+
+            <div class="summary-box">
+                <h4>Total Expenses</h4>
+                <p>₹<span id="totalExpense">0.00</span></p>
+            </div>
+
+            <div class="summary-box">
+                <h4>Net Profit / Loss</h4>
+                <p>₹<span id="netProfit">0.00</span></p>
+            </div>
+        </div>
+
+        <h3 class="records">Financial Records</h3>
+        <ul class="records" id="financeList"></ul>
+    </div>
+</section>
+
+<section class="working" id="working">
+    <h2>Working Process</h2>
+    <ol class="steps">
+        <li><strong>Field Movement:</strong> The machine moves through the sugarcane field.</li>
+        <li><strong>Cutting:</strong> The machine cuts the sugarcane stalks.</li>
+        <li><strong>Leaf Separation:</strong> Suitable machines separate leaves and unwanted material.</li>
+        <li><strong>Chopping:</strong> Some harvesters chop stalks into sections.</li>
+        <li><strong>Collection:</strong> Harvested cane is transferred for transport.</li>
+    </ol>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact">
+        <div class="contact-info">
+            <p><strong>Business:</strong> Shrikar Sugarcane Harvester Machine</p>
+            <p><strong>Address:</strong> Karad Nagar, Ahmedpur</p>
+            <p><strong>Phone:</strong>
+                <a href="tel:7219710967">7219710967</a>
+            </p>
+        </div>
+
+        <h3>Send Your Enquiry</h3>
+        <form id="contactForm">
+            <input type="text" id="name"
+                   placeholder="Enter Your Name" required>
+
+            <input type="email" id="email"
+                   placeholder="Enter Your Email" required>
+
+            <select id="topic" required>
+                <option value="">Select Enquiry Type</option>
+                <option value="Machine Purchase">Machine Purchase</option>
+                <option value="Price Enquiry">Price Enquiry</option>
+                <option value="Service Enquiry">Service Enquiry</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <textarea id="details"
+                      placeholder="Write Your Message" required></textarea>
+
+            <button class="btn" type="submit">Submit Enquiry</button>
+        </form>
+
+        <p id="message" role="status"></p>
+
+        <h3 class="records">Saved Enquiries</h3>
+        <ul class="records" id="enquiryList"></ul>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <p><strong>Shrikar Sugarcane Harvester Machine Business Management System</strong></p>
+    <p>Address: Karad Nagar, Ahmedpur</p>
+    <p>Phone: <a href="tel:7219710967">7219710967</a></p>
+    <p>&copy; 2026 Shrikar Sugarcane Harvester Machine. All Rights Reserved.</p>
+</footer>
+
+<script>
+// LOCAL STORAGE FUNCTIONS
+
+function loadData(key) {
+    try {
+        const data = JSON.parse(localStorage.getItem(key) || "[]");
+        return Array.isArray(data) ? data : [];
+    } catch (error) {
+        return [];
+    }
+}
+
+function saveData(key, data) {
+    try {
+        localStorage.setItem(key, JSON.stringify(data));
+        return true;
+    } catch (error) {
+        alert("Unable to save data. Please check browser storage.");
+        return false;
+    }
+}
+
+// RUPEE FORMATTING
+
+function formatRupees(amount) {
+    return Number(amount).toLocaleString("en-IN", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+}
+
+// DATA
+// A new key starts financial records separately from old test records.
+// Old records are not deleted.
+
+let bookings = loadData("shrikarBookings");
+let finances = loadData("shrikarFinances_v2");
+let enquiries = loadData("shrikarEnquiries");
+
+function addText(parent, value) {
+    parent.appendChild(document.createTextNode(value));
+}
+
+function addDeleteButton(parent, callback) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "delete-btn";
+    button.textContent = "Delete";
+    button.addEventListener("click", callback);
+    parent.appendChild(document.createElement("br"));
+    parent.appendChild(button);
+}
+
+// BOOKING
+
+function showBookings() {
+    const list = document.getElementById("bookingList");
+    list.replaceChildren();
+
+    if (!bookings.length) {
+        list.textContent = "No booking records yet.";
+        return;
+    }
+
+    bookings.forEach((b, index) => {
+        const li = document.createElement("li");
+
+        addText(li,
+            `Customer: ${b.customer} | Phone: ${b.phone} | ` +
+            `Date: ${b.date} | Village: ${b.village} | ` +
+            `Area: ${b.area} acres`
+        );
+
+        addDeleteButton(li, () => {
+            if (!confirm("Delete this booking?")) return;
+
+            const old = [...bookings];
+            bookings.splice(index, 1);
+
+            if (saveData("shrikarBookings", bookings)) {
+                showBookings();
+            } else {
+                bookings = old;
+            }
+        });
+
+        list.appendChild(li);
+    });
+}
+
+document.getElementById("bookingForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const booking = {
+        customer: document.getElementById("bookingCustomer").value.trim(),
+        phone: document.getElementById("bookingPhone").value.trim(),
+        date: document.getElementById("bookingDate").value,
+        village: document.getElementById("bookingVillage").value.trim(),
+        area: Number(document.getElementById("bookingArea").value)
+    };
+
+    bookings.push(booking);
+
+    if (saveData("shrikarBookings", bookings)) {
+        showBookings();
+        this.reset();
+        alert("Booking saved successfully!");
+    } else {
+        bookings.pop();
+    }
+});
+
+// INCOME AND EXPENSES
+
+function showFinances() {
+    const list = document.getElementById("financeList");
+    list.replaceChildren();
+
+    let totalIncome = 0;
+    let totalExpense = 0;
+
+    // Calculate totals from the current financial records.
+    finances.forEach(r => {
+        const income = Number(r.income) || 0;
+        const diesel = Number(r.diesel) || 0;
+        const maintenance = Number(r.maintenance) || 0;
+
+        totalIncome += income;
+        totalExpense += diesel + maintenance;
+    });
+
+    document.getElementById("totalIncome").textContent =
+        formatRupees(totalIncome);
+
+    document.getElementById("totalExpense").textContent =
+        formatRupees(totalExpense);
+
+    document.getElementById("netProfit").textContent =
+        formatRupees(totalIncome - totalExpense);
+
+    if (finances.length === 0) {
+        list.textContent = "No financial records yet.";
+        return;
+    }
+
+    finances.forEach((r, index) => {
+        const li = document.createElement("li");
+
+        const income = Number(r.income) || 0;
+        const diesel = Number(r.diesel) || 0;
+        const maintenance = Number(r.maintenance) || 0;
+        const profit = income - diesel - maintenance;
+
+        addText(li,
+            `Description: ${r.description} | ` +
+            `Income: ₹${formatRupees(income)} | ` +
+            `Diesel: ₹${formatRupees(diesel)} | ` +
+            `Maintenance: ₹${formatRupees(maintenance)} | ` +
+            `Profit/Loss: ₹${formatRupees(profit)}`
+        );
+
+        addDeleteButton(li, () => {
+            if (!confirm("Delete this financial record?")) return;
+
+            const old = [...finances];
+            finances.splice(index, 1);
+
+            if (saveData("shrikarFinances_v2", finances)) {
+                showFinances();
+            } else {
+                finances = old;
+            }
+        });
+
+        list.appendChild(li);
+    });
+}
+
+document.getElementById("financeForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const description =
+        document.getElementById("financeDescription").value.trim();
+
+    const incomeField = document.getElementById("income");
+    const dieselField = document.getElementById("diesel");
+    const maintenanceField = document.getElementById("maintenance");
+
+    const income = Number(incomeField.value);
+    const diesel = Number(dieselField.value);
+    const maintenance = Number(maintenanceField.value);
+
+    if (
+        !description ||
+        incomeField.value.trim() === "" ||
+        dieselField.value.trim() === "" ||
+        maintenanceField.value.trim() === "" ||
+        !Number.isFinite(income) ||
+        !Number.isFinite(diesel) ||
+        !Number.isFinite(maintenance) ||
+        income < 0 ||
+        diesel < 0 ||
+        maintenance < 0
+    ) {
+        alert("Please enter valid financial details.");
+        return;
+    }
+
+    const record = {
+        description: description,
+        income: income,
+        diesel: diesel,
+        maintenance: maintenance
+    };
+
+    finances.push(record);
+
+    if (saveData("shrikarFinances_v2", finances)) {
+        showFinances();
+        this.reset();
+        alert("Financial record saved successfully!");
+    } else {
+        finances.pop();
+    }
+});
+
+// ENQUIRIES
+
+function showEnquiries() {
+    const list = document.getElementById("enquiryList");
+    list.replaceChildren();
+
+    if (!enquiries.length) {
+        list.textContent = "No enquiries saved yet.";
+        return;
+    }
+
+    enquiries.forEach((enquiry, index) => {
+        const li = document.createElement("li");
+
+        addText(li,
+            `Name: ${enquiry.name} | Email: ${enquiry.email} | ` +
+            `Type: ${enquiry.topic} | Message: ${enquiry.details} | ` +
+            `Date: ${enquiry.date}`
+        );
+
+        addDeleteButton(li, () => {
+            if (!confirm("Delete this enquiry?")) return;
+
+            const old = [...enquiries];
+            enquiries.splice(index, 1);
+
+            if (saveData("shrikarEnquiries", enquiries)) {
+                showEnquiries();
+            } else {
+                enquiries = old;
+            }
+        });
+
+        list.appendChild(li);
+    });
+}
+
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const enquiry = {
+        name: document.getElementById("name").value.trim(),
+        email: document.getElementById("email").value.trim(),
+        topic: document.getElementById("topic").value,
+        details: document.getElementById("details").value.trim(),
+        date: new Date().toLocaleString()
+    };
+
+    enquiries.push(enquiry);
+
+    if (saveData("shrikarEnquiries", enquiries)) {
+        showEnquiries();
+
+        document.getElementById("message").textContent =
+            "Thank you, " + enquiry.name +
+            "! Your enquiry has been saved successfully.";
+
+        this.reset();
+    } else {
+        enquiries.pop();
+    }
+});
+
+// MINIMUM BOOKING DATE
+
+const now = new Date();
+
+const today = [
+    now.getFullYear(),
+    String(now.getMonth() + 1).padStart(2, "0"),
+    String(now.getDate()).padStart(2, "0")
+].join("-");
+
+document.getElementById("bookingDate").min = today;
+
+// LOAD ALL RECORDS
+
+showBookings();
+showFinances();
+showEnquiries();
+
+</script>
+
+</body>
+</html>
