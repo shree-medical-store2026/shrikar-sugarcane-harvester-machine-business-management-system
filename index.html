@@ -12,7 +12,6 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
-
 body {
     font-family: Arial, sans-serif;
     background: #f4f8f1;
@@ -26,9 +25,21 @@ header {
     padding: 15px 5%;
     text-align: center;
 }
+.header logo
+{
+    align-items: left;
+    height: auto;
+    width: 200px;
 
-header h1 { font-size: 25px; }
+}
 
+header h1 {
+    font-size: 25px;
+    display: block;
+    color: white;
+    font-weight:bold ;
+    text-align: center;
+}
 nav {
     background: #104d26;
     padding: 12px;
@@ -43,7 +54,9 @@ nav a {
     display: inline-block;
 }
 
-nav a:hover { color: #ffdf70; }
+nav a:hover {
+    color: #ffdf70;
+}
 
 .hero {
     background: linear-gradient(120deg, #174d28, #6ca943);
@@ -56,6 +69,17 @@ nav a:hover { color: #ffdf70; }
     font-size: 32px;
     margin-bottom: 15px;
 }
+.hero h2 .name {
+    display: block;
+    color: white;
+    font-size: 50px;
+}
+
+.hero h2 .machine {
+    display: block;
+    color: #c8ff36;
+    font-size: 45px;
+}
 
 .hero p {
     max-width: 750px;
@@ -66,7 +90,7 @@ nav a:hover { color: #ffdf70; }
     display: inline-block;
     background: #176b35;
     color: white;
-    padding: 11px 18px;
+    padding: 11px 18px; 
     border-radius: 7px;
     text-decoration: none;
     font-weight: bold;
@@ -97,7 +121,9 @@ section h2 {
     text-align: center;
 }
 
-.feature-section, .working { background: #e6f1df; }
+.feature-section, .working {
+    background: #e6f1df;
+}
 
 .cards {
     display: grid;
@@ -135,18 +161,13 @@ form {
     gap: 12px;
 }
 
-input, textarea, select {
+input {
     width: 100%;
     padding: 12px;
     border: 1px solid #aabbaa;
     border-radius: 6px;
     font-size: 16px;
     font-family: Arial, sans-serif;
-}
-
-textarea {
-    min-height: 100px;
-    resize: vertical;
 }
 
 .records {
@@ -198,7 +219,9 @@ textarea {
     margin: auto;
 }
 
-.steps li { margin: 12px 0; }
+.steps li {
+    margin: 12px 0;
+}
 
 .contact {
     max-width: 700px;
@@ -223,13 +246,6 @@ textarea {
     text-decoration: none;
 }
 
-#message {
-    margin-top: 12px;
-    color: #176b35;
-    font-weight: bold;
-    overflow-wrap: anywhere;
-}
-
 footer {
     background: #173d24;
     color: white;
@@ -247,11 +263,56 @@ footer a {
     text-decoration: none;
 }
 
+@media (max-width: 650px)}
+    header h1 {
+        font-size: 21px;
+    }
+
+    nav a {
+        font-size: 14px;
+        margin: 5px;
+    }
+
+    .hero h2 {
+        font-size: 27px;
+    }
+
+    section {
+        padding: 30px 5%;
+}
+/* MACHINE GALLERY */
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.gallery-card {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #d8e7d3;
+    box-shadow: 0 4px 12px #00000012;
+    text-align: center;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.gallery-card h3 {
+    color: #247b3e;
+    margin-top: 10px;
+}
+
 @media (max-width: 650px) {
-    header h1 { font-size: 21px; }
-    nav a { font-size: 14px; margin: 5px; }
-    .hero h2 { font-size: 27px; }
-    section { padding: 30px 5%; }
+    .gallery-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 </style>
 </head>
@@ -259,69 +320,86 @@ footer a {
 <body>
 
 <header>
-    <h1>🌾 Shrikar Sugarcane Harvester Machine</h1>
+    <img src="ChatGPT Image Oct 28, 2026, 09_25_43 PM.png"alt="harvester" width="200">
+    <h1>shrikar sugarcane Harvester Machine</h1>
     <p>Business Management System</p>
 </header>
-
+  
 <nav>
     <a href="#home">Home</a>
     <a href="#about">About</a>
     <a href="#features">Features</a>
+    <a href="#gallery">gallery</a>
     <a href="#booking">Booking</a>
     <a href="#finance">Income & Expenses</a>
     <a href="#working">Working</a>
     <a href="#contact">Contact</a>
 </nav>
-
 <main>
-
 <section class="hero" id="home">
-    <h2>Shrikar Sugarcane Harvester Machine</h2>
-    <p>Modern Technology for Efficient Sugarcane Harvesting.
-    Manage machine bookings, income and expenses in one place.</p>
+  <h2>
+    <span class="name">Shrikar</span>
+    <span class="machine">Sugarcane Harvester Machine</span>
+</h2>    
+    <p>
+        Modern Technology for Efficient Sugarcane Harvesting.
+        Manage machine bookings, income and expenses in one place.
+    </p>
     <a href="#features" class="btn">Explore Features</a>
 </section>
 
 <section id="about">
     <h2>About the Machine</h2>
     <div class="about">
-        <p>Shrikar Sugarcane Harvester Machine Business Management
-        System is a website designed to organize sugarcane harvesting
-        services. It helps maintain machine booking information and
-        financial records using HTML, CSS, JavaScript and Local Storage.</p>
+        <p>
+            Shrikar Sugarcane Harvester Machine Business Management
+            System is a website designed to organize sugarcane harvesting
+            services. It helps maintain machine booking information and
+            financial records using HTML, CSS, JavaScript and Local Storage.
+        </p>
     </div>
 </section>
 
 <section id="features" class="feature-section">
     <h2>Business Management Features</h2>
+
     <div class="cards">
         <div class="card">
             <h3>1. Home Page</h3>
             <p>Website introduction and machine information.</p>
             <a href="#home">Visit Home</a>
         </div>
+
         <div class="card">
             <h3>2. Machine Booking</h3>
             <p>Save booking date, village name and farming area.</p>
             <a href="#booking">Book Machine</a>
         </div>
+
         <div class="card">
             <h3>3. Income Management</h3>
             <p>Record income and expenses and calculate profit or loss.</p>
             <a href="#finance">Manage Finances</a>
         </div>
+
         <div class="card">
-            <h3>4. Contact & Enquiry</h3>
-            <p>View contact details and submit enquiries.</p>
+            <h3>4. Contact Information</h3>
+            <p>View business address and phone number.</p>
             <a href="#contact">Contact Us</a>
         </div>
     </div>
 </section>
+</div>
 
 <section id="booking" class="feature-section">
     <h2>Machine Booking</h2>
+
     <div class="feature-card">
+        <p style="color: green; font-size: 18px; font-weight: bold;">
+    🌾 Sugarcane Harvesting Rate: Only ₹5,000 Per Acre
+</p>
         <h3>Book Harvesting Machine</h3>
+
         <form id="bookingForm">
             <input type="text" id="bookingCustomer"
                    placeholder="Customer Name" required>
@@ -349,6 +427,7 @@ footer a {
 
 <section id="finance">
     <h2>Income & Expense Management</h2>
+
     <div class="feature-card">
         <h3>Add Financial Record</h3>
 
@@ -396,65 +475,107 @@ footer a {
         <ul class="records" id="financeList"></ul>
     </div>
 </section>
+<section"id="gallery" class="feature-section">
+    <h2>Our Machine Gallery</h2>
+
+    <div class="gallery-container">
+
+        <div class="gallery-card">
+            <img src="harvester1.jpg" alt="harvester" height="200" width="300">
+            <h3>Harvester Machine</h3>
+        </div>
+
+        <div class="gallery-card">
+            <img src="harvester2.jpg" alt="harvester" height="200" width="300">
+            <h3>Sugarcane Cutting</h3>
+        </div>
+
+        <div class="gallery-card">
+            <img src="harvester3.jpg" alt="harvester" height="200" width="300">
+            <h3>Machine Side View</h3>
+        </div>
+
+        <div class="gallery-card">
+            <img src="harvester5.jpg" alt="harvester" height="200" width="300">
+            <h3>Modern Harvester</h3>
+        </div>
+
+        <div class="gallery-card">
+            <img src="harvester6.jpg" alt="harvester" height="200" width="300">
+            <h3>Field Harvesting</h3>
+        </div>
+
+        <div class="gallery-card">
+            <img src="harvester7.jpg" alt="harvester" height="200" width="300">
+            <h3>Machine Working</h3>
+        </div>
+
+    </div>
+</section>
 
 <section class="working" id="working">
     <h2>Working Process</h2>
+
     <ol class="steps">
-        <li><strong>Field Movement:</strong> The machine moves through the sugarcane field.</li>
-        <li><strong>Cutting:</strong> The machine cuts the sugarcane stalks.</li>
-        <li><strong>Leaf Separation:</strong> Suitable machines separate leaves and unwanted material.</li>
-        <li><strong>Chopping:</strong> Some harvesters chop stalks into sections.</li>
-        <li><strong>Collection:</strong> Harvested cane is transferred for transport.</li>
+        <li><strong>Field Movement:</strong>
+            The machine moves through the sugarcane field.</li>
+
+        <li><strong>Cutting:</strong>
+            The machine cuts the sugarcane stalks.</li>
+
+        <li><strong>Leaf Separation:</strong>
+            Suitable machines separate leaves and unwanted material.</li>
+
+        <li><strong>Chopping:</strong>
+            Some harvesters chop stalks into sections.</li>
+
+        <li><strong>Collection:</strong>
+            Harvested cane is transferred for transport.</li>
     </ol>
 </section>
 
+<!-- CONTACT US: ENQUIRY FORM REMOVED -->
+
 <section id="contact">
     <h2>Contact Us</h2>
+
     <div class="contact">
         <div class="contact-info">
-            <p><strong>Business:</strong> Shrikar Sugarcane Harvester Machine</p>
-            <p><strong>Address:</strong> Karad Nagar, Ahmedpur</p>
-            <p><strong>Phone:</strong>
-                <a href="tel:7219710967">7219710967</a>
+            <p>
+                <strong>Business:</strong>
+                Shrikar Sugarcane Harvester Machine
+            </p>
+
+            <p>
+                <strong>Address:</strong>
+                Karad Nagar, Ahmedpur
+            </p>
+
+            <p>
+                <strong>Phone:</strong>
+                <a href="tel:7119710967">7119710967</a>
             </p>
         </div>
-
-        <h3>Send Your Enquiry</h3>
-        <form id="contactForm">
-            <input type="text" id="name"
-                   placeholder="Enter Your Name" required>
-
-            <input type="email" id="email"
-                   placeholder="Enter Your Email" required>
-
-            <select id="topic" required>
-                <option value="">Select Enquiry Type</option>
-                <option value="Machine Purchase">Machine Purchase</option>
-                <option value="Price Enquiry">Price Enquiry</option>
-                <option value="Service Enquiry">Service Enquiry</option>
-                <option value="Other">Other</option>
-            </select>
-
-            <textarea id="details"
-                      placeholder="Write Your Message" required></textarea>
-
-            <button class="btn" type="submit">Submit Enquiry</button>
-        </form>
-
-        <p id="message" role="status"></p>
-
-        <h3 class="records">Saved Enquiries</h3>
-        <ul class="records" id="enquiryList"></ul>
     </div>
 </section>
 
 </main>
 
 <footer>
-    <p><strong>Shrikar Sugarcane Harvester Machine Business Management System</strong></p>
+    <p>
+        <strong>
+            Shrikar Sugarcane Harvester Machine Business Management System
+        </strong>
+    </p>
+
     <p>Address: Karad Nagar, Ahmedpur</p>
-    <p>Phone: <a href="tel:7219710967">7219710967</a></p>
-    <p>&copy; 2026 Shrikar Sugarcane Harvester Machine. All Rights Reserved.</p>
+
+    <p>Phone: <a href="tel:7119710967">7119710967</a></p>
+
+    <p>
+        &copy; 2026 Shrikar Sugarcane Harvester Machine.
+        All Rights Reserved.
+    </p>
 </footer>
 
 <script>
@@ -488,13 +609,10 @@ function formatRupees(amount) {
     });
 }
 
-// DATA
-// A new key starts financial records separately from old test records.
-// Old records are not deleted.
+// BOOKING AND FINANCIAL DATA
 
 let bookings = loadData("shrikarBookings");
 let finances = loadData("shrikarFinances_v2");
-let enquiries = loadData("shrikarEnquiries");
 
 function addText(parent, value) {
     parent.appendChild(document.createTextNode(value));
@@ -578,7 +696,6 @@ function showFinances() {
     let totalIncome = 0;
     let totalExpense = 0;
 
-    // Calculate totals from the current financial records.
     finances.forEach(r => {
         const income = Number(r.income) || 0;
         const diesel = Number(r.diesel) || 0;
@@ -683,69 +800,6 @@ document.getElementById("financeForm").addEventListener("submit", function(e) {
     }
 });
 
-// ENQUIRIES
-
-function showEnquiries() {
-    const list = document.getElementById("enquiryList");
-    list.replaceChildren();
-
-    if (!enquiries.length) {
-        list.textContent = "No enquiries saved yet.";
-        return;
-    }
-
-    enquiries.forEach((enquiry, index) => {
-        const li = document.createElement("li");
-
-        addText(li,
-            `Name: ${enquiry.name} | Email: ${enquiry.email} | ` +
-            `Type: ${enquiry.topic} | Message: ${enquiry.details} | ` +
-            `Date: ${enquiry.date}`
-        );
-
-        addDeleteButton(li, () => {
-            if (!confirm("Delete this enquiry?")) return;
-
-            const old = [...enquiries];
-            enquiries.splice(index, 1);
-
-            if (saveData("shrikarEnquiries", enquiries)) {
-                showEnquiries();
-            } else {
-                enquiries = old;
-            }
-        });
-
-        list.appendChild(li);
-    });
-}
-
-document.getElementById("contactForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    const enquiry = {
-        name: document.getElementById("name").value.trim(),
-        email: document.getElementById("email").value.trim(),
-        topic: document.getElementById("topic").value,
-        details: document.getElementById("details").value.trim(),
-        date: new Date().toLocaleString()
-    };
-
-    enquiries.push(enquiry);
-
-    if (saveData("shrikarEnquiries", enquiries)) {
-        showEnquiries();
-
-        document.getElementById("message").textContent =
-            "Thank you, " + enquiry.name +
-            "! Your enquiry has been saved successfully.";
-
-        this.reset();
-    } else {
-        enquiries.pop();
-    }
-});
-
 // MINIMUM BOOKING DATE
 
 const now = new Date();
@@ -758,12 +812,10 @@ const today = [
 
 document.getElementById("bookingDate").min = today;
 
-// LOAD ALL RECORDS
+// LOAD BOOKING AND FINANCIAL RECORDS
 
 showBookings();
 showFinances();
-showEnquiries();
-
 </script>
 
 </body>
